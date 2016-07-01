@@ -7,12 +7,10 @@ public class Cat extends Animal
     { 
         // Seek rats
         pathFinding(Rat.class, false);
-
         walk();
         
         // Eat rats
         List<Rat> rats = getIntersectingObjects(Rat.class);
         getWorld().removeObjects(rats);
-        
     }
 }

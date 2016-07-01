@@ -35,11 +35,6 @@ public class Animal extends Actor
         setLocation(getX() + faceX, getY() + faceY);
     }
     
-    public int[] getDestination()
-    {
-        return new int[]{getX() + faceX, getY() + faceY};
-    }
-    
     public List<Actor> findNearest(int x, int y, Class cls)
     {
         int nearestDist = -1;

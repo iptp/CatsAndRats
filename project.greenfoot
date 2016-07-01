@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Fri Jul 01 21:01:36 JST 2016
+#Fri Jul 01 21:43:06 JST 2016
 dependency9.type=UsesDependency
 target4.type=ClassTarget
 class.Cheese.image=cheese.png
@@ -65,7 +65,7 @@ dependency8.to=Rat
 dependency6.type=UsesDependency
 target1.type=ClassTarget
 dependency9.to=Cheese
-editor.swing.0.width=701
+editor.swing.0.width=700
 editor.swing.0.y=20
 target6.y=70
 target1.typeParameters=
@@ -114,7 +114,7 @@ dependency2.type=UsesDependency
 target5.typeParameters=
 world.lastInstantiated=RatWorld
 target2.showInterface=false
-mainWindow.height=784
+mainWindow.height=780
 editor.swing.0.height=700
 dependency11.from=Animal
 target3.name=Rat
