@@ -1,6 +1,7 @@
 ## Cats and Rats
 
-This tutorial is intended to teach how to:<br>
+This tutorial is intended to teach how to:
+
 * Add Actors to the world
 * Control the simulation
 * Inspect an object's fields
@@ -8,7 +9,10 @@ This tutorial is intended to teach how to:<br>
 * Make small changes to the source code
 * Test those changes
 
-The scenario consists of a cat-and-mouse simulation with four kinds of entities:<br>
+
+
+The scenario consists of a cat-and-mouse simulation with four kinds of entities:
+
 0. The rats will try to eat every piece of cheese, but will flee if there are cats nearby
 0. The cats will try to eat the rats
 0. The mousetrap will immobilize rats that step on them
