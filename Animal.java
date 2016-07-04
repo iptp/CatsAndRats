@@ -60,15 +60,26 @@ public class Animal extends Actor
     
     public boolean isWalkable(int x, int y)
     {
+        // Same as current position?
         if(x == getX() && y == getY())
             return true;
             
         boolean xValid = (0 <= x && x < getWorld().getWidth());
         boolean yValid = (0 <= y && y < getWorld().getHeight());
         
-        boolean notOccupied = (getWorld().getObjectsAt(x, y, getClass()).size() == 0);
+        // Position within screen
+        if(!xValid || !yValid)
+            return false;
         
-        return xValid && yValid && notOccupied;
+        // Occupied by cone
+        if(getWorld().getObjectsAt(x, y, Cone.class).size() != 0)
+            return false;
+
+        // Occupied by animal of same class
+        if(getWorld().getObjectsAt(x, y, getClass()).size() != 0)
+            return false;
+        
+        return true;
     }
     
     public void pathFinding(Class cls, boolean goAway)
@@ -95,7 +106,7 @@ public class Animal extends Actor
         {
             posX = getX() + offsets[i][0];
             posY = getY() + offsets[i][1];
-
+            
             nearest = findNearest(posX, posY, cls).get(0);
             
             distX = Math.abs(nearest.getX() - posX);
@@ -104,7 +115,9 @@ public class Animal extends Actor
             
             if(goAway)
                 dist *= -1;
+                
             //getWorld().showText(""+dist, posX, posY);
+            
             if((bestDist == -1 || dist < bestDist) && isWalkable(posX, posY))
             {
                 bestDist = dist;
