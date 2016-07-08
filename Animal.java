@@ -30,6 +30,25 @@ public class Animal extends Actor
         }
     }
     
+    /** Set the animal's facing direction.
+     * 1: Left         2: Down
+     * 3: Right      4: Up
+     */
+    public void setFace(int dir)
+    {
+        switch(dir)
+        {
+            case 1: setFace(1, 0);
+                break;
+            case 2: setFace(0, 1);
+                break;
+            case 3: setFace(-1, 0);
+                break;
+            case 4: setFace(0, -1);
+                break;
+        }
+    }
+    
     public void walk()
     { 
         setLocation(getX() + faceX, getY() + faceY);
@@ -92,7 +111,7 @@ public class Animal extends Actor
             return;
         }
         
-        int[][] offsets = { {face[0], face[1]}, {1, 0}, {0, 1}, {-1, 0}, {0, -1}, {0, 0} };
+        int[][] offsets = { face, {1, 0}, {0, 1}, {-1, 0}, {0, -1}, {0, 0} };
         
         int bestDist = -1;
         int[] best = null;
